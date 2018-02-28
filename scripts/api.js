@@ -12,13 +12,25 @@ const api = function() {
         url: `${BASE_URL}/items`,
         method: 'POST',
         contentType: 'application/json',
+        dataType: 'json',
         data: newItem,
         success: callback,
     })
 }
+    const updateItem = function(id, updateData, callback) {
+        $.ajax({
+            url: `${BASE_URL}/items/${id}`,
+            method: 'PATCH',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify(updateData),
+            success: callback,
+        })
+    }
     return {
         getItems,
         createItem,
+        updateItem,
     }
 }();
 
