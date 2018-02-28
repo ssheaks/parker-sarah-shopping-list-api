@@ -66,8 +66,11 @@ const shoppingList = (function(){
       event.preventDefault();
       const newItemName = $('.js-shopping-list-entry').val();
       $('.js-shopping-list-entry').val('');
-      addItemToShoppingList(newItemName);
-      render();
+      //addItemToShoppingList(newItemName);
+      api.createItem(newItemName, (newItem) => {
+        store.addItem(newItem);
+        render();
+      });
     });
   }
   

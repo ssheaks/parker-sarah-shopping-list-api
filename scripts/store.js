@@ -5,7 +5,7 @@
 // eslint-disable-next-line no-unused-vars
 const store = (function(){
   const addItem = function(item) {
-    this.items.push(item);
+    this.items.unshift(item);
   };
 
   const findById = function(id) {
