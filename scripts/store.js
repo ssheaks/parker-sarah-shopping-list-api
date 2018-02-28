@@ -13,7 +13,8 @@ const store = (function(){
   };
 
   const findAndUpdate = function(id, newData) {
-    let item = findById(id);
+    let item = this.items.find(item => item.id === id);
+    // this.findById(id);
     console.log(item);
     Object.assign(item, newData);
   };
@@ -45,7 +46,7 @@ const store = (function(){
   };
 
   return {
-    items: [{name: 'apples', id: cuid(), checked: false}],
+    items: [],
     hideCheckedItems: false,
     searchTerm: '',
     findAndUpdate,
