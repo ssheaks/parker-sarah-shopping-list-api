@@ -5,12 +5,9 @@
 $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
-<<<<<<< HEAD
 });
-=======
-  api.getItems((items) => {
-    items.forEach((item) => store.addItem(item));
-    shoppingList.render();
-  });
-});
->>>>>>> b9c920809c20ab0da31bc1c58e82180d656a36a7
+
+const item = store.items[0];
+console.log('current name: ' + item.name);
+store.findAndUpdate(item.id, { name: 'foobar' });
+console.log('new name: ' + item.name);

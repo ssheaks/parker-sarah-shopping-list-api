@@ -1,10 +1,9 @@
 'use strict';
 const api = function() {
-<<<<<<< HEAD
     const BASE_URL = 'https://thinkful-list-api.herokuapp.com/parker'
     const getItems = function(callback){
-        $.getJSON(`${BASE_URL}/items`, callback);
-    }
+    $.getJSON(`${BASE_URL}/items`, callback);   
+}
     const createItem = function(name, callback){
         const newItem = JSON.stringify({
             name,
@@ -33,27 +32,5 @@ const api = function() {
         createItem,
         updateItem,
     }
-=======
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/parker';
-  const getItems = function(callback){
-    $.getJSON(`${BASE_URL}/items`, callback);
-  };
-  const createItem = function(name, callback){
-    const newItem = JSON.stringify({
-      name,
-    });
-    $.ajax({
-      url: `${BASE_URL}/items`,
-      method: 'POST',
-      contentType: 'application/json',
-      data: newItem,
-      success: callback,
-    });
-  };
-  return {
-    getItems,
-    createItem,
-  };
->>>>>>> b9c920809c20ab0da31bc1c58e82180d656a36a7
 }();
 
