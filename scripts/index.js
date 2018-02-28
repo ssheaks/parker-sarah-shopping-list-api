@@ -1,20 +1,16 @@
 'use strict';
 
-/* global shoppingList, cuid, api, $ */
-
-// eslint-disable-next-line no-unused-vars
-const store = {
-  items: [
-    { id: cuid(), name: 'apples', checked: false },
-    { id: cuid(), name: 'oranges', checked: false },
-    { id: cuid(), name: 'milk', checked: true },
-    { id: cuid(), name: 'bread', checked: false }
-  ],
-  hideCheckedItems: false,
-  searchTerm: ''
-};
+/* global shoppingList, store, api, $ */
 
 $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
+<<<<<<< HEAD
 });
+=======
+  api.getItems((items) => {
+    items.forEach((item) => store.addItem(item));
+    shoppingList.render();
+  });
+});
+>>>>>>> b9c920809c20ab0da31bc1c58e82180d656a36a7
