@@ -16,7 +16,7 @@ const store = (function(){
     let item = findById(id);
     console.log(item);
     Object.assign(item, newData);
-  }
+  };
   // const findAndToggleChecked = function(id) {
   //   const item = this.findById(id);
   //   item.checked = !item.checked;
@@ -45,7 +45,7 @@ const store = (function(){
   };
 
   return {
-    items: [],
+    items: [{name: 'apples', id: cuid(), checked: false}],
     hideCheckedItems: false,
     searchTerm: '',
     findAndUpdate,
