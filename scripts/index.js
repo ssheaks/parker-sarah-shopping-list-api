@@ -1,4 +1,6 @@
-/* global shoppingList, cuid */
+'use strict';
+
+/* global shoppingList, cuid, $ */
 
 // eslint-disable-next-line no-unused-vars
 const store = {
@@ -15,4 +17,8 @@ const store = {
 $(document).ready(function() {
   shoppingList.bindEventListeners();
   shoppingList.render();
+});
+
+$.getJSON('https://thinkful-list-api.herokuapp.com/ei-student/items', (response) => {
+  console.log('api response:', response);
 });
